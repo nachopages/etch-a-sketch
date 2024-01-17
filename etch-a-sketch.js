@@ -5,6 +5,7 @@ const DEFAULT_COLOR = "#333333";
 const inputRange = document.getElementById('inputRange');
 const inputColor = document.getElementById('colorPicker');
 const buttons = document.querySelectorAll('button');
+const clearBtn = document.getElementById('clean');
 const grid = document.getElementById('grid');
 const p = document.getElementById('currentSize');
 inputRange.value = 16;
@@ -12,6 +13,7 @@ inputColor.value = "#333333"
 let size;
 let color = DEFAULT_COLOR;
 let mode;
+
 
 inputRange.addEventListener('input', (e) => {
     size = e.target.value;
@@ -59,12 +61,18 @@ const paintDiv = (e) => {
         e.target.style.backgroundColor = color;
     } else if (mode === 'eraser') {
         e.target.style.backgroundColor = '#fafbfd';
-    } else {
-
-    } {
-
+    } else if (mode === 'rainbowMode') {
+        const randomR = Math.floor(Math.random() * 256)
+        const randomG = Math.floor(Math.random() * 256)
+        const randomB = Math.floor(Math.random() * 256)
+        e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`
     }
 }
+
+clearBtn.addEventListener('click', () => {
+    reloadGrid();
+    setUpGrid(size);
+})
 
 window.onload = () => {
     setUpGrid(DEFAULT_SIZE);

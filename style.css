@@ -10,7 +10,7 @@ body {
 
 h1 {
     font-size: 48px;
-    font-family: "Roboto", sans-serif;
+    font-family: "Nunito", sans-serif;
     text-align: center;
     font-weight: 600;
     margin: 32px;
@@ -73,6 +73,9 @@ button:hover {
 }
 
 #currentSize {
+    font-family: "Nunito", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
     text-align: center;
 }
 
